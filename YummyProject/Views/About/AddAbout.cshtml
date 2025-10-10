@@ -1,0 +1,53 @@
+﻿@model YummyProject.Models.About
+@{
+    ViewBag.Title = "Hakkımızda Ekle";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Yeni Hakkımızda Ekle</h2>
+<br />
+
+<form method="post">
+    <div class="form-group">
+        <label>Resim URL</label>
+        <input type="text" name="ImageUrl" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Resim URL 2</label>
+        <input type="text" name="ImageUrl2" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Özellik 1</label>
+        <input type="text" name="Item1" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Özellik 2</label>
+        <input type="text" name="Item2" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Özellik 3</label>
+        <input type="text" name="Item3" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Açıklama</label>
+        <textarea name="Description" class="form-control" rows="4"></textarea>
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Video URL</label>
+        <input type="text" name="VideoUrl" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Telefon</label>
+        <input type="text" name="PhoneNumber" class="form-control" />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+    <a href="/About/Index" class="btn btn-secondary">Geri Dön</a>
+</form>

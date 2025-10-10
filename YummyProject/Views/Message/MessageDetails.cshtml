@@ -1,0 +1,56 @@
+﻿@model YummyProject.Models.Message
+@{
+    ViewBag.Title = "Mesaj Detayı";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Mesaj Detayı</h2>
+<br />
+
+<div class="card">
+    <div class="card-header bg-info text-white">
+        <h4>Mesaj Bilgileri</h4>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-6">
+                <p><strong>Mesaj No:</strong> @Model.MessageId</p>
+                <p><strong>Ad Soyad:</strong> @Model.Name</p>
+                <p><strong>Email:</strong> @Model.Email</p>
+            </div>
+            <div class="col-md-6">
+                <p><strong>Konu:</strong> @Model.Subject</p>
+                <p>
+                    <strong>Durum:</strong>
+                    @if (Model.IsRead)
+                    {
+                        <span class="badge badge-success">Okundu</span>
+                    }
+                    else
+                    {
+                        <span class="badge badge-warning">Okunmadı</span>
+                    }
+                </p>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-md-12">
+                <p><strong>Mesaj:</strong></p>
+                <p class="border p-3">@Model.MessageContent</p>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        @if (!Model.IsRead)
+        {
+            <a href="/Message/MarkAsRead/@Model.MessageId" class="btn btn-success">Okundu İşaretle</a>
+        }
+        else
+        {
+            <a href="/Message/MarkAsUnread/@Model.MessageId" class="btn btn-warning">Okunmadı İşaretle</a>
+        }
+        <a href="/Message/DeleteMessage/@Model.MessageId" class="btn btn-danger" onclick="return confirm('Silmek istediğinize emin misiniz?')">Sil</a>
+        <a href="/Message/Index" class="btn btn-secondary">Geri Dön</a>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+﻿@model YummyProject.Models.Event
+@{
+    ViewBag.Title = "Etkinlik Ekle";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Yeni Etkinlik Ekle</h2>
+<br />
+
+<form method="post">
+    <div class="form-group">
+        <label>Resim URL</label>
+        <input type="text" name="ImageUrl" class="form-control" required />
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Başlık</label>
+        <input type="text" name="Title" class="form-control" required />
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Açıklama</label>
+        <textarea name="Description" class="form-control" rows="4" required></textarea>
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Fiyat (₺)</label>
+        <input type="number" step="0.01" name="Price" class="form-control" required />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+    <a href="/Event/Index" class="btn btn-secondary">Geri Dön</a>
+</form>

@@ -1,0 +1,305 @@
+﻿﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/UILayout/Index.cshtml";
+}
+
+<!-- Feature Section -->
+@Html.Action("DefaultFeature")
+<!-- /Hero Section -->
+<!-- About Section -->
+@Html.Action("DefaultAbout")
+<!-- /About Section -->
+<!-- Service Section -->
+<!-- Service Section -->
+<section id="why-us" class="why-us section light-background">
+    <div class="container">
+        <div class="row gy-4">
+
+            <!-- Service Section -->
+            <section id="why-us" class="why-us section light-background">
+                <div class="container">
+                    <div class="row gy-4">
+                        <div class="col-lg-4 d-flex" data-aos="fade-up" data-aos-delay="100">
+                            <div class="why-box h-100">
+                                <h3>Neden Yummy Atelier</h3>
+                                <p>
+                                    Yummy Atelier, lezzeti bir sanat formuna dönüştüren özel bir mutfaktır.
+                                    Her tabak, şefimizin hayal gücüyle şekillenir; her detay, duyularınıza dokunmak için tasarlanır.
+                                    Burada yemek yemek değil, bir deneyim yaşarsınız
+                                </p>
+                                <div class="text-center">
+                                    <a href="#" class="more-btn"><span>daha fazla bilgi edin</span> <i class="bi bi-chevron-right"></i></a>
+                                </div>
+                            </div>
+                        </div><!-- End Why Box -->
+
+                        <div class="col-lg-8 d-flex align-items-stretch">
+                            <div class="row gy-4" data-aos="fade-up" data-aos-delay="200">
+
+                                @Html.Action("DefaultService")
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section><!-- /Why Us Section -->
+        </div>
+    </div>
+</section><!-- /Why Us Section -->
+<!-- Stats Section -->
+<section id="stats" class="stats section dark-background">
+
+    <img src="~/Templates/yummy-red-1.0.0/assets/img/stats-bg.jpg" alt="" data-aos="fade-in">
+
+    <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+            <div class="col-lg-3 col-md-6">
+                <div class="stats-item text-center w-100 h-100">
+                    <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>Ürün Sayısı</p>
+                </div>
+            </div><!-- End Stats Item -->
+
+            <div class="col-lg-3 col-md-6">
+                <div class="stats-item text-center w-100 h-100">
+                    <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>Kategori Sayısı</p>
+                </div>
+            </div><!-- End Stats Item -->
+
+            <div class="col-lg-3 col-md-6">
+                <div class="stats-item text-center w-100 h-100">
+                    <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>Etkinlik Sayısı</p>
+                </div>
+            </div><!-- End Stats Item -->
+
+            <div class="col-lg-3 col-md-6">
+                <div class="stats-item text-center w-100 h-100">
+                    <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>Şef Sayısı</p>
+                </div>
+            </div><!-- End Stats Item -->
+
+        </div>
+
+    </div>
+
+</section><!-- /Stats Section -->
+<!-- Product Section -->
+@Html.Action("DefaultProduct")
+<!-- /Menu Section -->
+<!-- Testimonials Section -->
+<section id="testimonials" class="testimonials section light-background">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>YORUMLAR</h2>
+        <p>Hakkımızda <span class="description-title">Ne DiyoRlar ?</span></p>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="swiper init-swiper">
+            <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": "auto",
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                  }
+                }
+            </script>
+            @Html.Action("DefaultTestimonial")
+            <div class="swiper-pagination"></div>
+        </div>
+
+    </div>
+
+</section><!-- /Testimonials Section -->
+<!-- Events Section -->
+@Html.Action("DefaultEvent")<!-- /Events Section -->
+<!-- Chefs Section -->
+<section id="chefs" class="chefs section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Şefler</h2>
+        <p><span>Profesyonel</span> <span class="description-title">Şeflerimiz<br></span></p>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+
+        @Html.Action("DefaultChef")
+
+    </div>
+
+</section><!-- /Chefs Section -->
+<!-- Booking Section -->
+<section id="book-a-table" class="book-a-table section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Masa Ayırtın</h2>
+        <p><span>Rezervasyonunuzu</span> <span class="description-title">Buradan Yapabilirsiniz<br></span></p>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+
+        <div class="row g-0" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="col-lg-4 reservation-img" style="background-image: url(~/Templates/yummy-red-1.0.0/assets/img/reservation.jpg);"></div>
+
+            <div class="col-lg-8 d-flex align-items-center reservation-form-bg" data-aos="fade-up" data-aos-delay="200">
+                <form action="/Default/Booking" method="post" role="form" class="php-email-form">
+                    <div class="row gy-4">
+                        <div class="col-lg-4 col-md-6">
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required="">
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required="">
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <input type="text" class="form-control" name="phone" id="phone" placeholder="Your Phone" required="">
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <input type="date" name="date" class="form-control" id="date" placeholder="Date" required="">
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <input type="time" class="form-control" name="time" id="time" placeholder="Time" required="">
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <input type="number" class="form-control" name="people" id="people" placeholder="# of people" required="">
+                        </div>
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
+                    </div>
+
+                    <div class="text-center mt-3">
+                        <div class="loading">Loading</div>
+                        <div class="error-message"></div>
+                        <div class="sent-message">Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!</div>
+                        <button type="submit">Book a Table</button>
+                    </div>
+                </form>
+            </div><!-- End Reservation Form -->
+
+        </div>
+
+    </div>
+
+</section><!-- /Book A Table Section -->
+<!-- Photo Gallery Section -->
+<section id="gallery" class="gallery section light-background">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Galeri</h2>
+        <p><span>Galeriye</span> <span class="description-title">Göz Atın</span></p>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="swiper init-swiper">
+            <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": "auto",
+                  "centeredSlides": true,
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                  },
+                  "breakpoints": {
+                    "320": {
+                      "slidesPerView": 1,
+                      "spaceBetween": 0
+                    },
+                    "768": {
+                      "slidesPerView": 3,
+                      "spaceBetween": 20
+                    },
+                    "1200": {
+                      "slidesPerView": 5,
+                      "spaceBetween": 20
+                    }
+                  }
+                }
+            </script>
+            @Html.Action("DefaultPhotoGallery")
+       
+            <div class="swiper-pagination"></div>
+        </div>
+
+    </div>
+
+</section><!-- /Gallery Section -->
+<!-- Contact Section -->
+<section id="contact" class="contact section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>İletişim</h2>
+        <p><span>Haritada</span> <span class="description-title">Görüntüle</span></p>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="mb-5">
+            <iframe style="width: 100%; height: 400px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d95864.64583110734!2d36.03742272538591!3d41.33561051297336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4087d585f71e481b%3A0x7f460c55a509e5ea!2sAtakum%2FSamsun!5e0!3m2!1str!2str!4v1759421977353!5m2!1str!2str" frameborder="0" allowfullscreen=""></iframe>
+        </div><!-- End Google Maps -->
+
+        @Html.Action("DefaultContactInfo")
+        <!-- Message Form -->
+        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="600">
+            <div class="row gy-4">
+
+                <div class="col-md-6">
+                    <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                </div>
+
+                <div class="col-md-6 ">
+                    <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                </div>
+
+                <div class="col-md-12">
+                    <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                </div>
+
+                <div class="col-md-12">
+                    <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                    <div class="loading">Loading</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                    <button type="submit">Mesaj Gönder</button>
+                </div>
+
+            </div>
+        </form>
+
+        <!-- End Message Form -->
+
+    </div>
+
+</section><!-- /Contact Section -->

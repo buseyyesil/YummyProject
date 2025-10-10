@@ -1,0 +1,39 @@
+﻿@model List<YummyProject.Models.ChefSocial>
+@{
+    ViewBag.Title = "Şef Sosyal Medya";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>@ViewBag.ChefName - Sosyal Medya Hesapları</h2>
+<br />
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Platform Adı</th>
+            <th>Başlık</th>
+            <th>Açıklama</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Title</td>
+                <td>@item.Description</td>
+                <td>
+                    <a href="/ChefSocial/UpdateChefSocial/@item.Id" class="btn btn-warning btn-sm">Güncelle</a>
+                    <a href="/ChefSocial/DeleteChefSocial/@item.Id" class="btn btn-danger btn-sm" onclick="return confirm('Silmek istediğinize emin misiniz?')">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<br />
+<a href="/ChefSocial/AddChefSocial/@ViewBag.ChefId" class="btn btn-primary">Yeni Sosyal Medya Ekle</a>
+<a href="/Chef/Index" class="btn btn-secondary">Şef Listesine Dön</a>

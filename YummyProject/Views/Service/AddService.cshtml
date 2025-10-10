@@ -1,0 +1,25 @@
+﻿@model YummyProject.Models.Service
+@{
+    ViewBag.Title = "Hizmet Güncelle";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Hizmet Güncelle</h2>
+<br />
+
+<form method="post">
+    <input type="hidden" name="ServiceId" value="@Model.ServiceId" />
+
+    <div class="form-group">
+        <label>Başlık</label>
+        <input type="text" name="Title" class="form-control" value="@Model.Title" required />
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Açıklama</label>
+        <textarea name="Description" class="form-control" rows="4" required>@Model.Description</textarea>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-warning">Güncelle</button>
+    <a href="/Service/Index" class="btn btn-secondary">Geri Dön</a>
+</form>

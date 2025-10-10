@@ -1,0 +1,27 @@
+﻿@model List<YummyProject.Models.PhotoGallery>
+@{
+    ViewBag.Title = "Fotoğraf Galerisi";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Fotoğraf Galerisi Yönetimi</h2>
+<br />
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-3 mb-4">
+            <div class="card">
+                <img src="@item.ImageUrl" class="card-img-top" style="height:200px; object-fit:cover;" />
+                <div class="card-body text-center">
+                    <p><strong>ID:</strong> @item.PhotoGalleryId</p>
+                    <a href="/PhotoGallery/UpdatePhotoGallery/@item.PhotoGalleryId" class="btn btn-warning btn-sm">Güncelle</a>
+                    <a href="/PhotoGallery/DeletePhotoGallery/@item.PhotoGalleryId" class="btn btn-danger btn-sm" onclick="return confirm('Silmek istediğinize emin misiniz?')">Sil</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<br />
+<a href="/PhotoGallery/AddPhotoGallery" class="btn btn-primary">Yeni Fotoğraf Ekle</a>

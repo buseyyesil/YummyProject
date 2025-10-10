@@ -1,0 +1,38 @@
+﻿@model YummyProject.Models.ContactInfo
+@{
+    ViewBag.Title = "İletişim Bilgisi Ekle";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Yeni İletişim Bilgisi Ekle</h2>
+<br />
+
+<form method="post">
+    <div class="form-group">
+        <label>Adres</label>
+        <textarea name="Address" class="form-control" rows="3" required></textarea>
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Email</label>
+        <input type="email" name="Email" class="form-control" required />
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Telefon</label>
+        <input type="text" name="PhoneNumber" class="form-control" required />
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Harita URL</label>
+        <input type="text" name="MapUrl" class="form-control" placeholder="Google Maps embed URL" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Çalışma Saatleri</label>
+        <input type="text" name="OpenHours" class="form-control" placeholder="Örn: Pzt-Cmt: 09:00 - 22:00" required />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+    <a href="/ContactInfo/Index" class="btn btn-secondary">Geri Dön</a>
+</form>

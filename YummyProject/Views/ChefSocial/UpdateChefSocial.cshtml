@@ -1,0 +1,35 @@
+﻿@model YummyProject.Models.ChefSocial
+@{
+    ViewBag.Title = "Sosyal Medya Güncelle";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Sosyal Medya Güncelle</h2>
+<br />
+
+<form method="post">
+    <input type="hidden" name="Id" value="@Model.Id" />
+
+    <div class="form-group">
+        <label>İkon URL</label>
+        <input type="text" name="ImageUrl" class="form-control" value="@Model.ImageUrl" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Platform Adı</label>
+        <input type="text" name="Name" class="form-control" value="@Model.Name" required />
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Başlık</label>
+        <input type="text" name="Title" class="form-control" value="@Model.Title" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Açıklama (URL)</label>
+        <input type="text" name="Description" class="form-control" value="@Model.Description" required />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-warning">Güncelle</button>
+    <a href="/Chef/Index" class="btn btn-secondary">Geri Dön</a>
+</form>

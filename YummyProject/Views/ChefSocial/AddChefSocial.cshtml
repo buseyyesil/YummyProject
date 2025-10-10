@@ -1,0 +1,35 @@
+﻿@model YummyProject.Models.ChefSocial
+@{
+    ViewBag.Title = "Sosyal Medya Ekle";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>@ViewBag.ChefName - Yeni Sosyal Medya Ekle</h2>
+<br />
+
+<form method="post">
+    <input type="hidden" name="ChefId" value="@ViewBag.ChefId" />
+
+    <div class="form-group">
+        <label>İkon URL</label>
+        <input type="text" name="ImageUrl" class="form-control" placeholder="Örn: /images/facebook-icon.png" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Platform Adı</label>
+        <input type="text" name="Name" class="form-control" placeholder="Örn: Facebook, Instagram, Twitter" required />
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Başlık</label>
+        <input type="text" name="Title" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Açıklama (URL)</label>
+        <input type="text" name="Description" class="form-control" placeholder="Örn: https://facebook.com/chef" required />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+    <a href="/ChefSocial/Index/@ViewBag.ChefId" class="btn btn-secondary">Geri Dön</a>
+</form>

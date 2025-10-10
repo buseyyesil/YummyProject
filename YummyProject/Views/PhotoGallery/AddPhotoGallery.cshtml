@@ -1,0 +1,38 @@
+﻿@model YummyProject.Models.PhotoGallery
+@{
+    ViewBag.Title = "Fotoğraf Ekle";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Yeni Fotoğraf Ekle</h2>
+<br />
+
+<form method="post">
+    <div class="form-group">
+        <label>Resim URL</label>
+        <input type="text" name="ImageUrl" class="form-control" required />
+        <small class="form-text text-muted">Fotoğraf URL'sini giriniz</small>
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Önizleme</label>
+        <div id="preview" style="display:none;">
+            <img id="previewImage" src="" style="max-width:300px; max-height:300px;" class="img-thumbnail" />
+        </div>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+    <a href="/PhotoGallery/Index" class="btn btn-secondary">Geri Dön</a>
+</form>
+
+<script>
+    document.querySelector('input[name="ImageUrl"]').addEventListener('input', function() {
+        var url = this.value;
+        if(url) {
+            document.getElementById('previewImage').src = url;
+            document.getElementById('preview').style.display = 'block';
+        } else {
+            document.getElementById('preview').style.display = 'none';
+        }
+    });
+</script>

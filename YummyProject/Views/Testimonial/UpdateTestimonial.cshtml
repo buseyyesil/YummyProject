@@ -1,0 +1,46 @@
+﻿@model YummyProject.Models.TestMonial
+@{
+    ViewBag.Title = "Yorum Güncelle";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Yorum Güncelle</h2>
+<br />
+
+<form method="post">
+    <input type="hidden" name="TestMonialId" value="@Model.TestMonialId" />
+
+    <div class="form-group">
+        <label>Resim URL</label>
+        <input type="text" name="ImageUrl" class="form-control" value="@Model.ImageUrl" required />
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Ad Soyad</label>
+        <input type="text" name="NameSurname" class="form-control" value="@Model.NameSurname" required />
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Ünvan</label>
+        <input type="text" name="Title" class="form-control" value="@Model.Title" required />
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Yorum</label>
+        <textarea name="Comment" class="form-control" rows="4" required>@Model.Comment</textarea>
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Puan (1-5)</label>
+        <select name="Rating" class="form-control" required>
+            <option value="1" @(Model.Rating == 1 ? "selected" : "")>⭐ 1 Yıldız</option>
+            <option value="2" @(Model.Rating == 2 ? "selected" : "")>⭐⭐ 2 Yıldız</option>
+            <option value="3" @(Model.Rating == 3 ? "selected" : "")>⭐⭐⭐ 3 Yıldız</option>
+            <option value="4" @(Model.Rating == 4 ? "selected" : "")>⭐⭐⭐⭐ 4 Yıldız</option>
+            <option value="5" @(Model.Rating == 5 ? "selected" : "")>⭐⭐⭐⭐⭐ 5 Yıldız</option>
+        </select>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-warning">Güncelle</button>
+    <a href="/Testimonial/Index" class="btn btn-secondary">Geri Dön</a>
+</form>

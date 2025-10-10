@@ -1,0 +1,45 @@
+﻿@model YummyProject.Models.TestMonial
+@{
+    ViewBag.Title = "Yorum Ekle";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Yeni Yorum Ekle</h2>
+<br />
+
+<form method="post">
+    <div class="form-group">
+        <label>Resim URL</label>
+        <input type="text" name="ImageUrl" class="form-control" required />
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Ad Soyad</label>
+        <input type="text" name="NameSurname" class="form-control" required />
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Ünvan</label>
+        <input type="text" name="Title" class="form-control" placeholder="Örn: Mutlu Müşteri" required />
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Yorum</label>
+        <textarea name="Comment" class="form-control" rows="4" required></textarea>
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Puan (1-5)</label>
+        <select name="Rating" class="form-control" required>
+            <option value="">Puan Seçiniz</option>
+            <option value="1">⭐ 1 Yıldız</option>
+            <option value="2">⭐⭐ 2 Yıldız</option>
+            <option value="3">⭐⭐⭐ 3 Yıldız</option>
+            <option value="4">⭐⭐⭐⭐ 4 Yıldız</option>
+            <option value="5">⭐⭐⭐⭐⭐ 5 Yıldız</option>
+        </select>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+    <a href="/Testimonial/Index" class="btn btn-secondary">Geri Dön</a>
+</form>

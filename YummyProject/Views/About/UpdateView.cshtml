@@ -1,0 +1,55 @@
+﻿@model YummyProject.Models.About
+@{
+    ViewBag.Title = "Hakkımızda Güncelle";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Hakkımızda Güncelle</h2>
+<br />
+
+<form method="post">
+    <input type="hidden" name="AboutId" value="@Model.AboutId" />
+
+    <div class="form-group">
+        <label>Resim URL</label>
+        <input type="text" name="ImageUrl" class="form-control" value="@Model.ImageUrl" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Resim URL 2</label>
+        <input type="text" name="ImageUrl2" class="form-control" value="@Model.ImageUrl2" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Özellik 1</label>
+        <input type="text" name="Item1" class="form-control" value="@Model.Item1" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Özellik 2</label>
+        <input type="text" name="Item2" class="form-control" value="@Model.Item2" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Özellik 3</label>
+        <input type="text" name="Item3" class="form-control" value="@Model.Item3" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Açıklama</label>
+        <textarea name="Description" class="form-control" rows="4">@Model.Description</textarea>
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Video URL</label>
+        <input type="text" name="VideoUrl" class="form-control" value="@Model.VideoUrl" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Telefon</label>
+        <input type="text" name="PhoneNumber" class="form-control" value="@Model.PhoneNumber" />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-warning">Güncelle</button>
+    <a href="/About/Index" class="btn btn-secondary">Geri Dön</a>
+</form>

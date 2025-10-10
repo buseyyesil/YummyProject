@@ -1,0 +1,35 @@
+﻿@model YummyProject.Models.Event
+@{
+    ViewBag.Title = "Etkinlik Güncelle";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Etkinlik Güncelle</h2>
+<br />
+
+<form method="post">
+    <input type="hidden" name="EventId" value="@Model.EventId" />
+
+    <div class="form-group">
+        <label>Resim URL</label>
+        <input type="text" name="ImageUrl" class="form-control" value="@Model.ImageUrl" required />
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Başlık</label>
+        <input type="text" name="Title" class="form-control" value="@Model.Title" required />
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Açıklama</label>
+        <textarea name="Description" class="form-control" rows="4" required>@Model.Description</textarea>
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Fiyat (₺)</label>
+        <input type="number" step="0.01" name="Price" class="form-control" value="@Model.Price" required />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-warning">Güncelle</button>
+    <a href="/Event/Index" class="btn btn-secondary">Geri Dön</a>
+</form>

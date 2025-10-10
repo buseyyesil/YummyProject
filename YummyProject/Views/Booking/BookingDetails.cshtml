@@ -1,0 +1,58 @@
+﻿@model YummyProject.Models.Booking
+@{
+    ViewBag.Title = "Rezervasyon Detayı";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Rezervasyon Detayı</h2>
+<br />
+
+<div class="card">
+    <div class="card-header bg-info text-white">
+        <h4>Rezervasyon Bilgileri</h4>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-6">
+                <p><strong>Rezervasyon No:</strong> @Model.BookingId</p>
+                <p><strong>Ad Soyad:</strong> @Model.Name</p>
+                <p><strong>Email:</strong> @Model.Email</p>
+                <p><strong>Telefon:</strong> @Model.PhoneNumber</p>
+            </div>
+            <div class="col-md-6">
+                <p><strong>Tarih:</strong> @Model.BookingDate.ToString("dd.MM.yyyy HH:mm")</p>
+                <p><strong>Kişi Sayısı:</strong> @Model.PersonCount kişi</p>
+                <p>
+                    <strong>Durum:</strong>
+                    @if (Model.IsApproved)
+                    {
+                        <span class="badge badge-success">Onaylandı</span>
+                    }
+                    else
+                    {
+                        <span class="badge badge-warning">Onay Bekliyor</span>
+                    }
+                </p>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-md-12">
+                <p><strong>Mesaj:</strong></p>
+                <p class="border p-3">@Model.MessageContent</p>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        @if (!Model.IsApproved)
+        {
+            <a href="/Booking/ApproveBooking/@Model.BookingId" class="btn btn-success">Onayla</a>
+        }
+        else
+        {
+            <a href="/Booking/CancelApproval/@Model.BookingId" class="btn btn-warning">Onayı İptal Et</a>
+        }
+        <a href="/Booking/DeleteBooking/@Model.BookingId" class="btn btn-danger" onclick="return confirm('Silmek istediğinize emin misiniz?')">Sil</a>
+        <a href="/Booking/Index" class="btn btn-secondary">Geri Dön</a>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+﻿@model List<YummyProject.Models.Product>
+
+<table id="datatablesSimple">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Ürün Adı</th>
+            <th>Kategori</th>
+            <th>Fiyat</th>
+            <th>İçerik</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th>ID</th>
+            <th>Ürün Adı</th>
+            <th>Kategori</th>
+            <th>Fiyat</th>
+            <th>İçerik</th>
+            <th>İşlemler</th>
+        </tr>
+    </tfoot>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ProductId</td>
+                <td>@item.ProductName</td>
+                <td>@item.Category.CategoryName</td>
+                <td>@item.Price₺</td>
+                <td>@item.Ingredients</td>
+                <td>
+                    <a href="/Product/UpdateProduct/@item.ProductId" class="btn btn-warning btn-sm">Düzenle</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
